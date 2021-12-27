@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Simple Diabetes Classification Project</title>
+		<title>Diabetes Prediction Project</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -50,16 +50,46 @@
 								</div>
 								<div class="container">
 									<header class="major">
-										<h2>Simple Diabetes Classification Model</h2>
-										<p>About the Project</p>
+										<h2>Diabetes Prediction Project</h2>
 									</header>
-									<p>Introduction</p>
-									<p>Approach</p>
-								</div>
-								<div class="container">
-									<h2>Detailed Project Code</h2>
-									<p>You can view the detailed jupyter notebook <a href="Project 2/Diabetes Classification.html" title="diabetes notebook">here</a></p>
-								</div>
+									<h3>About the Project</h3>
+									<p>I have been interested to do a classification-type project related to healthcare and illnesses. I stumbled upon this <a href="https://www.kaggle.com/andrewmvd/early-diabetes-classification">dataset</a> on kaggle and felt there was great potential to develop an algorithm to predict a person having diabetes. Besides finding an appropriate classification algorithm, it would be useful to identify relevant variables to explain a person having diabetes.</p>
+									<h3>Approach</h3>
+									<p>Firstly, I would be conducting some basic exploratory data analysis to visualize some of the data present. Next, I would normalize the data due to there being a mixture of continuous and categorical variables. After which, I would be able to train several models using machine learning algorithms I have experience with.</p>
+									<h3>Algorithm Development</h3>
+									<p>The measure of accuracy used was f1-score which makes use of precision and recall. In a topic such as disease prediction, I believe that False Negatives (wrongly predicting a person being free from diabetes) is highly critical. Thus, the highest f1-score is considered the best as it would maximise the percentage of accurate positive predictions.</p>
+									<p>Now that the data has been prepared, I proceeded to develop models using 4 different algorithms : Logistic Regression, K-Nearest Neighbors (KNN), Decision Trees & Random Forest. The most accurate algorithm was the <b>Random Forest</b> algorithm. Here is a summary of all approaches:</p>
+									<table>
+										<tr>
+										  <th>Method</th>
+										  <th>f1-score</th>
+										</tr>
+										<tr>
+										  <td>Logistic Regression</td>
+										  <td>0.923077</td>
+										</tr>
+										<tr>
+											<td>KNN (no tuning)</td>
+											<td>0.942623</td>
+										</tr>
+										<tr>
+											<td>KNN (with tuning)</td>
+											<td>0.945607</td>
+										</tr>
+										<tr>
+											<td>Decision Trees</td>
+											<td>0.959677</td>
+										</tr>
+										<tr>
+											<td>Random Forest</td>
+											<td>0.968254</td>
+										</tr>
+									</table>
+									<p>Additionally, you can view the detailed jupyter notebook for the best performing model <b><a href="Project 2/Diabetes Classification.html">here</a></b>.</p>
+									<h3>Results & Interpretation</h3>
+									<p>Now that we have the best performing algorithm, we can move on to finding important variables or features in predicting a person having diabetes. The following plot was obtained by extracting feature importance from the best performing Random Forest model.</p>
+									<img src="Project 2/Feature Imp Plot.png" style="width:100%;height:auto;">
+									<p>As seen above, 2 of the most important variables appear to be Polydispia and Polyuria. Polydispia is a medical term for experiencing extreme thirst while Polyuria is a condition where a person has excessive urination. Cross-referencing this with online sources, I found that these are indeed 2 conditions which are found to be early indications of a person having diabetes. Thus, its high importance in our Random Forest model is justified.</p>
 							</section>
 
 
